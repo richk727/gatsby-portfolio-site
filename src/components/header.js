@@ -1,33 +1,44 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import styled from 'styled-components';
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 
+
+import Container from "../components/container";
+
+const Navbar = styled.nav`
+  ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+`;
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
+  <header>
+    <Container>
+      <h1>
+        <Link to="/">
         </Link>
       </h1>
-    </div>
+      <Navbar>
+        <ul>
+          <li>
+            <AnchorLink to="/#about" title="About" stripHash />
+          </li>
+          <li>
+            <AnchorLink to="/#work" title="Work" stripHash />
+          </li>
+          <li>
+            <AnchorLink to="/#projects" title="Projects" stripHash />
+          </li>
+          <li>
+            <AnchorLink to="/#contact" title="Contact" stripHash />
+          </li>
+        </ul>
+      </Navbar>
+    </Container>
   </header>
 )
 
