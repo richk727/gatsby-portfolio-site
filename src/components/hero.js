@@ -10,7 +10,7 @@ const HeroBody = styled.div`
   padding: 120px 0 350px;
   background: linear-gradient(-7.35deg, #fff 50%, var(--primary-accent) 51%);
   @media (min-width: 768px) {
-    margin-bottom: 15rem;
+    margin-bottom: 7.5rem;
     padding: 165px 0 205px;
   }
 `;
@@ -104,6 +104,7 @@ const HeroText = styled.div`
   }
 
   p {
+    margin-bottom: 1.45rem;
     color: #fff;
     font-size: 0.9rem;
     font-weight: 300;    
