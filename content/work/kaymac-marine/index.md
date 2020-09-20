@@ -1,8 +1,10 @@
 ---
 title: Kaymac Marine
-date: 2018-06-01
-image: ./cf-thumb.jpg
+date: 2020-01-01
+logo: ./logo.png
+image: ./km-thumb.jpg
 imageAlt: Cilhendre Fawr holiday cottages in South Wales.
-categories: WordPress|SASS|jQuery
+tools: WordPress|CSS|SASS|JavaScript|jQuery
+color: '#0050ab'
 ---
-Book a stay at these wonderful cottages set in the lovely Welsh countryside.
+Full build WordPress site with custom post types and taxonomies.

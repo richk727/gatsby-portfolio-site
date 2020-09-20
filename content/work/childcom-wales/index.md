@@ -1,8 +1,10 @@
 ---
 title: Child Commissioner Wales
 date: 2019-04-01
-image: ./cf-thumb.jpg
+logo: ./logo.png
+image: ./ccw-thumb.jpg
 imageAlt: Cilhendre Fawr holiday cottages in South Wales.
-categories: WordPress|SASS|jQuery
+tools: WordPress|SASS|jQuery
+color: '#27aae1'
 ---
-Book a stay at these wonderful cottages set in the lovely Welsh countryside.
+Full build for subdomain site and full internationaliztion and functionality for both subdomain and full site.

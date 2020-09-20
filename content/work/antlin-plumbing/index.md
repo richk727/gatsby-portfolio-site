@@ -1,8 +1,10 @@
 ---
 title: Antlin Plumbing
 date: 2018-09-01
-image: ./cf-thumb.jpg
+logo: ./logo.png
+image: ./ap-thumb.jpg
 imageAlt: Cilhendre Fawr holiday cottages in South Wales.
-categories: WordPress|SASS|jQuery
+tools: WordPress|SASS|jQuery
+color: '#142f44'
 ---
-Book a stay at these wonderful cottages set in the lovely Welsh countryside.
+Full WordPress build optimized for SEO and page speed.

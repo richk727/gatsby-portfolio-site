@@ -1,8 +1,10 @@
 ---
 title: Cilhendre Fawr
 date: 2018-06-01
+logo: ./logo.png
 image: ./cf-thumb.jpg
 imageAlt: Cilhendre Fawr holiday cottages in South Wales.
-categories: WordPress|SASS|jQuery
+tools: WordPress|SASS|jQuery
+color: '#308467'
 ---
-Book a stay at these wonderful cottages set in the lovely Welsh countryside.
+Full build WordPress site with booking system

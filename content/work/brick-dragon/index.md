@@ -1,8 +1,10 @@
 ---
 title: Brick Dragon
 date: 2018-10-01
-image: ./cf-thumb.jpg
+logo: ./logo.png
+image: ./bd-thumb.jpg
 imageAlt: Cilhendre Fawr holiday cottages in South Wales.
-categories: WordPress|SASS|jQuery
+tools: WooCommerce|WordPress|SASS|jQuery
+color: '#161a22'
 ---
-Book a stay at these wonderful cottages set in the lovely Welsh countryside.
+Full build WooCommerce store with custom product fields and custom shipping options.
