@@ -8,10 +8,20 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import styled from 'styled-components'
 
 import Header from "./header"
 import Container from "../components/container";
 import "./layout.css"
+const SiteFooter = styled.footer`
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-top: -23px;
+  color: #fff;
+  font-size: 0.64rem;
+  opacity: 0.8;
+`;
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -30,11 +40,12 @@ const Layout = ({ children }) => {
         <main>
             {children}
         </main>
-        <footer>
-          <Container>
-            © {new Date().getFullYear()} Richard Kaye
-          </Container>
-        </footer>
+        <Container>
+          <SiteFooter>
+            <div>© {new Date().getFullYear()} Richard Kaye</div>
+            <div>Powered by hamsters</div>
+          </SiteFooter>
+        </Container>
       </div>
     </>
   )

@@ -41,6 +41,7 @@ const ProjectsGrid = styled.div`
   display: grid;
   grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr) minmax(300px, 1fr);
   grid-column-gap: 2rem;
+  margin-bottom: 20px;
 `;
 
 const ProjectCard = styled.article`
