@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Img from "gatsby-image"
 
 import Container from "../components/container"
+import Seperator from "../components/seperator"
 
 
 const LISTING_QUERY = graphql`
@@ -60,6 +61,11 @@ const WorkCard = styled.article`
   @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
   }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
   header {
     display: flex;
     align-items: center;
@@ -157,6 +163,7 @@ const Work = () => {
             </WorkCard>
           ))}
         </WorkGrid>
+        <Seperator/>
       </Container>
     </section>
   )

@@ -2,23 +2,13 @@ import React from "react"
 import styled from 'styled-components'
 
 import Container from "../components/container"
+import Seperator from "../components/seperator"
 
 
 const AboutGrid = styled.div`
     display: grid;
     column-gap: 2rem;
     grid-template-columns: 1fr;
-    margin-bottom: 5rem;
-
-    &:after {
-        content: '';
-        position: relative;
-        height: 1px;
-        width: 80%;
-        margin-top: 2rem;
-        background: #000;
-        opacity: 0.1;
-    }
 
     @media (min-width: 768px) {
         column-gap: 2rem;
@@ -105,7 +95,7 @@ const HistoryCard = styled.div`
 const About = () => (
     <section id="about">
       <Container>
-          <AboutGrid>
+        <AboutGrid>
             <AboutContent>
                 <header>
                     <h2>About Me</h2>
@@ -130,8 +120,7 @@ const About = () => (
                 </HistoryCard>
             </WorkHistory>
           </AboutGrid>
-
-
+        <Seperator/>
       </Container>
     </section>
 )

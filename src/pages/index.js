@@ -6,6 +6,7 @@ import Container from "../components/container";
 import Hero from "../components/hero"
 import About from "../components/about"
 import Work from "../components/work"
+import Projects from "../components/projects"
 
 const IndexPage = () => (
   <Layout>
@@ -13,6 +14,7 @@ const IndexPage = () => (
     <Hero/>
     <About/>
     <Work/>
+    <Projects/>
 
     <section id="contact">
       <Container>

@@ -1,8 +1,9 @@
 ---
-title: Gatsby Portfolio Site
+title: Portfolio Site
 date: 2020-07-01
 image: ./portfolio-site.jpg
 imageAlt: Richard Kaye Portfolio Site
-categories: Gatsby, JavaScript, React, Styled Components
+categories: Gatsby|React|Styled Components
+repo: https://github.com/richk727
 ---
-Your looking at it!
+You're looking at it! A lightning fast Gatsby site to display all my work.
