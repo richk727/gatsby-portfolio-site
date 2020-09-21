@@ -25,8 +25,8 @@ const LISTING_QUERY = graphql`
               link
               image {
                 childImageSharp {
-                  fluid(maxWidth: 340, maxHeight: 250, quality: 90) {
-                  ...GatsbyImageSharpFluid
+                  fluid(maxWidth: 540, maxHeight: 300, quality: 100, cropFocus: WEST) {
+                    ...GatsbyImageSharpFluid
                   }
                 }
               }
@@ -39,17 +39,28 @@ const LISTING_QUERY = graphql`
 
 const ProjectsGrid = styled.div`
   display: grid;
-  grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr) minmax(300px, 1fr);
-  grid-column-gap: 2rem;
-  margin-bottom: 20px;
+  grid-template-columns: minmax(300px, 1fr);
+  grid-gap: 4rem;
+  margin-bottom: 10rem;
 `;
 
 const ProjectCard = styled.article`
   display: grid;
-  grid-template-rows: 250px 1fr;
-  margin-bottom: 4rem;
+  grid-template-columns: 1fr;
+  max-width: 520px;
+  margin: 0 auto;
   border-radius: 8px;
   box-shadow: 0 50px 100px rgba(50,50,93,.05), 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.1);
+  
+  @media (min-width: 768px) {
+    max-width: 1080px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
   header {
     display: flex;
     align-items: center;
@@ -57,24 +68,20 @@ const ProjectCard = styled.article`
 
   .image-container {
     position: relative;
+    min-height: 290px;
     overflow: hidden;
     border-radius: 8px 8px 0 0;
-    img {
-      margin-bottom: 0;
+
+    @media (min-width: 768px) {
+      border-radius: 8px 0 0 8px;
     }
   }
 
   .content {
-    padding: .5rem 32px 0;
-
-    h3 {
-      margin-bottom: 0.5rem;
-      font-size: 26.56px;
-    }
-
-    p {
-      font-size: 0.8rem;
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
   }
 
   .content__meta {
@@ -85,20 +92,18 @@ const ProjectCard = styled.article`
     li {
       padding: 4px 0;
       opacity: 0.7;
-      font-size: 0.8rem;
+      font-size: 13.6px;
 
       &:not(:last-of-type) {
         &:after {
           content: '/';
-          margin: 0 8px;
+          margin: 0 12px;
           opacity: 0.4;
         }
       }      
     }
   }
-
   .footer {
-    padding: 0 32px 2rem;
     .btn {
       display: inline-block;
       font-size: 14px;
@@ -127,14 +132,41 @@ const ProjectCard = styled.article`
   }
 `;
 
-const ImageOverlay = styled.div`
+const ImageOverlayContainer = styled.div`
   position: absolute;
-  height: 138px;
-  width: 100%;
   left: 0;
   right: 0;
-  bottom: -54px;
-  transform: skewY(-7.35deg);
+  bottom: 0;
+  background: #fff;
+
+  @media (min-width: 768px) {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 200px;
+    background: #fff;
+    transform: translateX(110%);
+  }
+  
+  .image-overlay {
+    position: absolute;
+    right: 0;
+    bottom: -36px;
+    left: 0;
+    height: 138px;
+    width: 100%;    
+    transform: skewY(-7.35deg);
+
+    @media (min-width: 768px) {
+      top: -1px;      
+      right: auto;
+      bottom: -1px;
+      left: -90px;
+      height: auto;
+      width: 120px;
+      transform: skewX(-10deg);
+    }
+  }
 
   .stripe-1 {
     position: absolute;
@@ -142,15 +174,33 @@ const ImageOverlay = styled.div`
     bottom: 20px;
     left: 0;
     height: 80px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(180deg,rgb(227, 230, 247, 0.5) 0%,rgba(255,255,255,0) 100%);
+    
+    @media (min-width: 768px) {
+      top: 0;
+      bottom: 0;
+      left: 0;
+      height: auto;
+      width: 60px;
+      background: linear-gradient(90deg,rgb(187, 221, 255, 0.3) 0%,rgba(255,255,255,0) 100%);
+    }
   }
   .stripe-2 {
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: -10px;
     left: 0;
-    height: 80px;
+    height: 90px;
     background: #fff;
+
+    @media (min-width: 768px) {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: auto;
+      height: auto;
+      width: 100px;
+    }
   }
 
   .highlight-1 {
@@ -159,7 +209,16 @@ const ImageOverlay = styled.div`
     bottom: 76px;
     left: 0;
     height: 8px;
-    background: linear-gradient(90deg, rgba(118, 137, 245, 0.6) 49.35%, rgba(255, 255, 255, 0.6) 81.76%);
+    background: linear-gradient(90deg, rgba(118, 137, 245, 0.6) 49.35%, rgba(197, 203, 211, 0.8)  81.76%);
+
+    @media (min-width: 768px) {
+      top: 35%;
+      bottom: 0;
+      left: 16px;
+      height: auto;
+      width: 8px;    
+      background: linear-gradient(180deg, rgba(197, 203, 211, 0.8)  49.35%, rgba(118, 137, 245, 0.6)81.76%);
+    }
   }
 
   .highlight-2 {
@@ -168,7 +227,17 @@ const ImageOverlay = styled.div`
     bottom: 76px;
     left: 50%;
     height: 8px;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.6)  49.35%, rgba(118, 137, 245, 0.6)81.76%);
+    background: linear-gradient(90deg, rgba(197, 203, 211, 0.8)  49.35%, rgba(118, 137, 245, 0.6) 81.76%);
+
+    @media (min-width: 768px) {
+      top: 0;
+      right: 0;
+      bottom: 90%;
+      left: 16px;
+      height: auto;
+      width: 8px;
+      background: linear-gradient(180deg, rgba(118, 137, 245, 0.6) 49.35%, rgba(197, 203, 211, 0.8) 81.76%);
+    }
   }
 `;
 
@@ -189,13 +258,19 @@ const Projects = () => {
           {allMarkdownRemark.edges.map(({node}) => (
             <ProjectCard key={node.id}>
               <div className="image-container">
-                <Img fluid={node.frontmatter.image.childImageSharp.fluid} />
-                <ImageOverlay>
-                  <div className="stripe-1"></div>
-                  <div className="stripe-2"></div>
-                  <div className="highlight-1"></div>
-                  <div className="highlight-2"></div>
-                </ImageOverlay>
+                <Img fluid={node.frontmatter.image.childImageSharp.fluid}
+                  alt={node.frontmatter.title}
+                  style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }}
+                  imgStyle={{ objectPosition: 'center left' }}
+                />
+                <ImageOverlayContainer>
+                  <div className="image-overlay">
+                    <div className="stripe-1"></div>
+                    <div className="stripe-2"></div>
+                    <div className="highlight-1"></div>
+                    <div className="highlight-2"></div>
+                  </div>
+                </ImageOverlayContainer>
               </div>
               <div className="content">
                 <h3>{node.frontmatter.title}</h3>
@@ -207,15 +282,14 @@ const Projects = () => {
                 <div dangerouslySetInnerHTML={{
                   __html: node.html
                 }} />
-
-              </div>
               <div className="footer">
-                {node.frontmatter.link &&
-                  <a className="btn" href={node.frontmatter.link}>View Site</a>
-                }
-                {node.frontmatter.repo &&
-                  <a className="btn" href={node.frontmatter.repo}>View Code</a>
-                }
+                  {node.frontmatter.link &&
+                    <a className="btn" target="_blank" rel="noreferrer noopener" href={node.frontmatter.link}>View Site</a>
+                  }
+                  {node.frontmatter.repo &&
+                    <a className="btn" target="_blank" rel="noreferrer noopener" href={node.frontmatter.repo}>View Code</a>
+                  }
+                </div>
               </div>
             </ProjectCard>
           ))}

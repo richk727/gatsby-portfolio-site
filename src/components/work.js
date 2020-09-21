@@ -27,7 +27,7 @@ const LISTING_QUERY = graphql`
               
               image {
                 childImageSharp {
-                  fluid(maxWidth: 540, maxHeight: 320, quality: 90) {
+                  fluid(maxWidth: 520, maxHeight: 308, quality: 90, cropFocus: NORTH, base64Width: 42) {
                   ...GatsbyImageSharpFluid
                   }
                 }
@@ -48,24 +48,21 @@ const LISTING_QUERY = graphql`
 
 const WorkGrid = styled.div`
   display: grid;
-  grid-template-columns: minmax(300px, 1fr); 
+  grid-template-columns: 1fr;
+  grid-gap: 40px;
+  margin-bottom: 20px;
+
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr;
+  }
 `;
 
 const WorkCard = styled.article`
-  display: grid;
-  grid-template-columns: 1fr;
-  margin-bottom: 4rem;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
   border-radius: 8px;
   box-shadow: 0 50px 100px rgba(50,50,93,.05), 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.1);
-
-  @media (min-width: 768px) {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  &:last-of-type {
-    margin-bottom: 0;
-  }
-
   header {
     display: flex;
     align-items: center;
@@ -74,33 +71,19 @@ const WorkCard = styled.article`
   .image-container {
     position: relative;
     overflow: hidden;
-    clip-path: polygon(0 0,100% 0, 80% 100%,0 100%);
-    border-radius: 8px 0 0 8px;
-
-
-    .overlay {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      opacity: 0.9;
-    }
-
-    .logo {
-      position: absolute !important;
-      top: 50%;
-      left: 45px;
-      width: 250px;
-      transform: translateY(-50%);
+    border-radius: 8px 8px 0 0;
+    img {
+      margin-bottom: 0;
     }
   }
 
   .content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 2rem;
+    padding: 1rem 32px 2rem;
+
+    h3 {
+      margin-bottom: 0.5rem;
+      font-size: 26.56px;
+    }
   }
 
   .content__meta {
@@ -111,16 +94,61 @@ const WorkCard = styled.article`
     li {
       padding: 4px 0;
       opacity: 0.7;
-      font-size: 13.6px;
+      font-size: 0.8rem;
 
       &:not(:last-of-type) {
         &:after {
           content: '/';
-          margin: 0 12px;
+          margin: 0 8px;
           opacity: 0.4;
         }
       }      
     }
+  }
+`;
+
+const ImageOverlay = styled.div`
+  position: absolute;
+  height: 138px;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: -36px;
+  transform: skewY(-7.35deg);
+
+  .stripe-1 {
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+    left: 0;
+    height: 80px;
+    background: linear-gradient(180deg,rgb(227, 230, 247, 0.5) 0%,rgba(255,255,255,0) 100%);
+  }
+  .stripe-2 {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 80px;
+    background: #fff;
+  }
+
+  .highlight-1 {
+    position: absolute;
+    right: 70%;
+    bottom: 76px;
+    left: 0;
+    height: 8px;
+    background: linear-gradient(90deg, rgba(118, 137, 245, 0.6) 49.35%, rgba(197, 203, 211, 0.8)  81.76%);
+  }
+
+  .highlight-2 {
+    position: absolute;
+    right: 0;
+    bottom: 76px;
+    left: 50%;
+    height: 8px;
+    background: linear-gradient(90deg, rgba(197, 203, 211, 0.8)  49.35%, rgba(118, 137, 245, 0.6)81.76%);
   }
 `;
 
@@ -140,25 +168,26 @@ const Work = () => {
           {allMarkdownRemark.edges.map(({node}) => (
             <WorkCard key={node.id}>
               <div className="image-container">
-                <Img className="screenshot"
+                <Img className=""
                   fluid={node.frontmatter.image.childImageSharp.fluid}
                 />
-                <div className="overlay" style={{backgroundColor: node.frontmatter.color}}></div>
-                <Img className="logo"
-                  alt={node.frontmatter.title}
-                  fluid={node.frontmatter.logo.childImageSharp.fluid}
-                  style={{ position: 'absolute'}}/>
+                                <ImageOverlay>
+                  <div className="stripe-1"></div>
+                  <div className="stripe-2"></div>
+                  <div className="highlight-1"></div>
+                  <div className="highlight-2"></div>
+                </ImageOverlay>
               </div>
               <div className="content">
                 <h3>{node.frontmatter.title}</h3>
-                <div dangerouslySetInnerHTML={{
-                  __html: node.html
-                }} />
                 <ul className="content__meta">
                   {splitTools(node.frontmatter.tools).map((item) => (
                     <li>{item}</li>
                   ))}
                 </ul>
+                <div dangerouslySetInnerHTML={{
+                  __html: node.html
+                }} />
               </div>
             </WorkCard>
           ))}
