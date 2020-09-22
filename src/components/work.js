@@ -63,6 +63,8 @@ const WorkCard = styled.article`
   margin: 0 auto;
   border-radius: 8px;
   box-shadow: 0 50px 100px rgba(50,50,93,.05), 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.1);
+  overflow: hidden;
+
   header {
     display: flex;
     align-items: center;
@@ -88,10 +90,12 @@ const WorkCard = styled.article`
 
   .content__meta {
     display: flex;
+    flex-wrap: wrap;
     padding: 0;
-    margin: 0;
+    margin: 0 0 1rem;
     list-style: none;
     li {
+      margin-bottom: 0;
       padding: 4px 0;
       opacity: 0.7;
       font-size: 0.8rem;
@@ -153,11 +157,11 @@ const ImageOverlay = styled.div`
 `;
 
 const Work = () => {
-  const {allMarkdownRemark} = useStaticQuery(LISTING_QUERY);
-  let splitTools = function(string) {
+  const { allMarkdownRemark } = useStaticQuery(LISTING_QUERY);
+  let splitTools = function (string) {
     return string.split('|');
   };
-  
+
   return (
     <section id="work">
       <Container>
@@ -165,13 +169,13 @@ const Work = () => {
           <h2>Work</h2>
         </header>
         <WorkGrid>
-          {allMarkdownRemark.edges.map(({node}) => (
+          {allMarkdownRemark.edges.map(({ node }) => (
             <WorkCard key={node.id}>
               <div className="image-container">
                 <Img className=""
                   fluid={node.frontmatter.image.childImageSharp.fluid}
                 />
-                                <ImageOverlay>
+                <ImageOverlay>
                   <div className="stripe-1"></div>
                   <div className="stripe-2"></div>
                   <div className="highlight-1"></div>
@@ -192,7 +196,7 @@ const Work = () => {
             </WorkCard>
           ))}
         </WorkGrid>
-        <Seperator/>
+        <Seperator />
       </Container>
     </section>
   )

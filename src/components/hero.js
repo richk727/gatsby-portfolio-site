@@ -86,46 +86,58 @@ const HeroText = styled.div`
 
   h1 {
     color: #fff;
-    font-size: 100px;
+    font-size: clamp(100px,7vw,126px);
     line-height: 0.8;
     
     .highlight {
       color: var(--secondary-accent);
     }
     .small {
-      font-size: 71px;
+      font-size: clamp(71px,5vw,90px);
     }
     @media (min-width: 768px) {
-      font-size: 126px;
-      .small {
-        font-size: 90px;
-      }
     }
   }
 
   p {
     margin-bottom: 1.45rem;
     color: #fff;
-    font-size: 0.9rem;
-    font-weight: 300;    
+    font-size: clamp(0.85rem, 1vw, 1rem);
+    font-weight: 400;    
     text-transform: uppercase;
-    transform: translate(9px, -23px);
+    transform: translate(10px, -25px);
+
     @media (min-width: 768px) {
-      font-size: 1rem;
-      letter-spacing: 0.5px;
-      transform: translate(9px, -25px);
+      transform: translate(10px, -23px);
     }
   }
 `;
 
 const HeroImage = styled.div`
   position: relative;
+  margin-bottom: -60%;
+  text-align: center;
+  
+  @media (min-width: 768px) {
+    text-align: right;
+    margin-bottom: -50%;
+  }
 
   img {
-    position: absolute;
-    top: -20%;
+    /* position: absolute;
+    top: -70px;
     left: 0;
-    right:0;
+    right:0; */
+    position: relative;
+    width: 410px;
+    max-width: 100%;
+    
+
+    @media (min-width: 768px) {
+      max-width: 100%;
+      width: 535px;
+      transform: translateY(-13%);
+    }
   }
 `;
 
@@ -147,7 +159,7 @@ export default function Hero() {
               <p>Web Developer</p>
             </HeroText>
             <HeroImage>
-              <img src={codingImage}/>
+              <img src={codingImage} alt="Richard Kaye a UK based web developer coding away"/>
             </HeroImage>
           </HeroContent>
         </Container>

@@ -39,7 +39,7 @@ const LISTING_QUERY = graphql`
 
 const ProjectsGrid = styled.div`
   display: grid;
-  grid-template-columns: minmax(300px, 1fr);
+  grid-template-columns: 1fr;
   grid-gap: 4rem;
   margin-bottom: 10rem;
 `;
@@ -51,6 +51,7 @@ const ProjectCard = styled.article`
   margin: 0 auto;
   border-radius: 8px;
   box-shadow: 0 50px 100px rgba(50,50,93,.05), 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.1);
+  overflow: hidden;
   
   @media (min-width: 768px) {
     max-width: 1080px;
@@ -81,11 +82,16 @@ const ProjectCard = styled.article`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 2rem;
+    padding: 0 2rem 2rem;
+
+    @media (min-width: 768px) {
+      padding: 2rem;
+    }
   }
 
   .content__meta {
     display: flex;
+    flex-wrap: wrap;
     padding: 0;
     margin: 0;
     list-style: none;

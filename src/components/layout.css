@@ -1,6 +1,6 @@
 :root {
   --primary-accent: #1337FF;
-  --secondary-accent: #C4B03D;
+  --secondary-accent: #efd42b;
   --heading-color: #232435;
   --body-color: #41414B;
   --heading-font: 'Raleway', serif;
@@ -221,9 +221,7 @@ img {
   padding-top: 0;
   margin-bottom: 1.45rem;
 }
-h1,h2,h3,h4,h5,h6 {
-  font-family: var(--heading-font);
-}
+
 h1 {
   margin-left: 0;
   margin-right: 0;
@@ -313,6 +311,10 @@ h6 {
   text-rendering: optimizeLegibility;
   font-size: 1rem;
   line-height: 1.65;
+}
+h1,h2,h3,h4,h5,h6 {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
 }
 hgroup {
   margin-left: 0;
@@ -608,12 +610,6 @@ pre tt:before,
 pre tt:after {
   content: "";
 }
-@media only screen and (max-width: 480px) {
-  html {
-    font-size: 100%;
-  }
-}
-
 .sr-only {
   position: absolute;
   width: 1px;

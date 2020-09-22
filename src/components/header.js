@@ -36,10 +36,14 @@ const Navbar = styled.nav`
     margin-bottom: 0;
   }
   a {
-    padding: 20px;
+    padding: 20px 10px;
     color: #fff;
     font-weight: 600;
     text-decoration: none;
+
+    @media (min-width: 480px) {
+      padding: 20px;
+    }
 
     &:hover {
       opacity: 0.8;
