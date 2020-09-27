@@ -291,7 +291,7 @@ const Projects = () => {
                 <div dangerouslySetInnerHTML={{
                   __html: node.html
                 }} />
-              <div className="footer">
+                <div className="footer">
                   {node.frontmatter.link &&
                     <a className="btn" target="_blank" rel="noreferrer noopener" href={node.frontmatter.link}>View Site</a>
                   }

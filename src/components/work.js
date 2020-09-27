@@ -50,6 +50,8 @@ const WorkGrid = styled.div`
 `;
 
 const WorkCard = styled.article`
+  display: flex;
+  flex-direction: column;
   width: 100%;
   max-width: 520px;
   margin: 0 auto;
@@ -72,7 +74,8 @@ const WorkCard = styled.article`
   }
 
   .content {
-    padding: 1rem 32px 2rem;
+    flex: 1 0 auto;
+    padding: 1rem 32px 0;
 
     h3 {
       margin-bottom: 0.5rem;
@@ -99,6 +102,34 @@ const WorkCard = styled.article`
           opacity: 0.4;
         }
       }      
+    }
+  }
+  .footer {
+    padding: 0 32px 2rem;
+    .btn {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 4px 12px;
+      color: var(--primary-accent);    
+      text-decoration: none;
+      border: 2px solid var(--primary-accent);
+      transition: all 225ms ease-in-out;
+      
+      &:nth-of-type(1) {
+        &:hover {
+          color: #fff;
+          background: var(--primary-accent);
+        }
+      }
+
+      &:nth-of-type(2) {
+        margin-left: 4px;
+        border-color: #fff;
+        &:hover {
+          border-color: var(--primary-accent);
+        }
+      }
     }
   }
 `;
@@ -191,6 +222,11 @@ const Work = () => {
                   __html: node.html
                 }} />
               </div>
+              <div className="footer">
+                  {node.frontmatter.url &&
+                    <a className="btn" target="_blank" rel="noreferrer noopener" href={node.frontmatter.url}>View Site</a>
+                  }
+                </div>
             </WorkCard>
           ))}
         </WorkGrid>
