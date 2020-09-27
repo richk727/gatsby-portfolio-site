@@ -8,4 +8,4 @@ tools: WordPress|SASS|jQuery
 color: '#308467'
 url: https://www.holiday-cottages-south-wales.co.uk/
 ---
-Full build WordPress site with booking system
+This brochure site was fully built in WordPress with image gallery, video support and third party booking system integration amongst its features!

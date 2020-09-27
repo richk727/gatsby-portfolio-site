@@ -8,4 +8,4 @@ tools: WordPress|SASS|jQuery
 color: '#27aae1'
 url: https://myplanner.childrenscommissioner.wales/
 ---
-Full build for subdomain site and full internationaliztion and functionality for both subdomain and full site.
+A WordPress site built with full internationalization support, custom WP blocks and extra accessibility options.

@@ -1,8 +1,8 @@
 :root {
   --primary-accent: #1337FF;
   --secondary-accent: #efd42b;
-  --heading-color: #232435;
-  --body-color: #41414B;
+  --heading-color:#2b2b4c;
+  --body-color: #3b3b5a;
   --heading-font: 'Raleway', serif;
   --body-font: 'Open Sans', sans-serif;
 }
@@ -380,6 +380,7 @@ p {
   padding-top: 0;
   margin-bottom: 1.65rem;
   line-height: 1.65;
+  
 }
 figure {
   margin-left: 0;
@@ -535,8 +536,12 @@ li > p {
   margin-bottom: calc(1.45rem / 2);
 }
 code {
-  font-size: 0.85rem;
+  padding: 2px 5px;
+  font-size: 0.8rem;
   line-height: 1.45rem;
+  color: var(--secondary-accent);
+  background: #313b72;
+  border-radius: 3px;
 }
 kbd {
   font-size: 0.85rem;
@@ -583,8 +588,7 @@ th:last-child,
 td:last-child {
   padding-right: 0;
 }
-tt,
-code {
+tt {
   background-color: hsla(0, 0%, 0%, 0.04);
   border-radius: 3px;
   font-family: "SFMono-Regular", Consolas,
@@ -597,19 +601,7 @@ pre code {
   background: none;
   line-height: 1.42;
 }
-code:before,
-code:after,
-tt:before,
-tt:after {
-  letter-spacing: -0.2em;
-  content: " ";
-}
-pre code:before,
-pre code:after,
-pre tt:before,
-pre tt:after {
-  content: "";
-}
+
 .sr-only {
   position: absolute;
   width: 1px;

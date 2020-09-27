@@ -8,4 +8,4 @@ tools: WooCommerce|WordPress|SASS|jQuery
 color: '#161a22'
 url: https://www.brickdragon.co.uk/
 ---
-Full build WooCommerce store with custom product fields and custom shipping options.
+An exciting bespoke ecommerce site built using WooCommerce with custom product fields and custom shipping options.

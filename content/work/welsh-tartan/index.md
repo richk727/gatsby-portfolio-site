@@ -8,4 +8,4 @@ tools: PHP|MySQL|CSS|SASS|jQuery
 color: '#c01c1c'
 url: https://www.welsh-tartan.com/
 ---
-Front end build to rebrand the ecommerce site. Addititional functionality added including sales reports and tartan picker for each individual product.
+This project was part of a modern rebrand with a new modern homepage as well as extra functionality like sales reports and product variation picker.

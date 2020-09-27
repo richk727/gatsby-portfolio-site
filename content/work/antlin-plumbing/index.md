@@ -8,4 +8,4 @@ tools: WordPress|SASS|jQuery
 color: '#142f44'
 url: https://www.antlinplumbing.co.uk/
 ---
-Full WordPress build optimized for SEO and page speed.
+A marketing site with an easy to use quote form built in WordPress with optimised SEO and performance.

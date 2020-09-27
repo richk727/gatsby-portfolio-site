@@ -20,6 +20,9 @@ const AboutGrid = styled.div`
 `;
 const AboutContent = styled.div`
     max-width: 623px;
+    p {        
+        font-size: 1.176rem;
+    }
 `;
 
 const WorkHistory = styled.div`
@@ -100,23 +103,23 @@ const About = () => (
                 <header>
                     <h2>About Me</h2>
                 </header>  
-                <p>Hi I'm Richard Kaye, a web developer with over 3 years of commercial experience in developing and implementing bespoke websites primarily in the LAMP stack!</p>
-                <p>Currently I work at Copperbay Digital building exciting websites for their clients across South Wales. I'm passionate about creating the best user experience to help clients succeed in their visions. Most recently I have successfully delivered a redesign of a clients bespoke e-commerce website following their rebrand!</p>
-                <p>On the side I'm currently php artisan tinker'ing with the Laravel framework with a mealplanner app, you can view progress here.</p>
+                <p>Hey I'm Rich, a web developer with over 4 years of commercial experience developing and implementing bespoke websites for clients across the UK!</p>
+                <p>I've worked on a wide range of clients from marketing sites in <code>WordPress</code>Primarily I develop sites in the LAMP stack using either <code>WordPress</code> or <code>Laravel</code>. Currently I work as part of the awesome marketing team <a href="https://www.veeqo.com/" target="_blank" rel="noopener noreferrer">Veeqo</a> developing their kickass marketing site.</p>
+                <p>On the side I'm currently diving into the world of <code>React</code> and using frameworks such as <code>Gatsby</code> to create lightning fast sites like the one you're seeing right now!</p>
             </AboutContent>
             <WorkHistory>
                 <h3>Work History</h3>
                 <HistoryCard>
                     <p className="title">Veeqo / Front End Web Developer</p>
-                    <p class="text-sm">Working as part of the marketing team to deliver a growth driven SAAS marketing website.</p>
+                    <p class="text-sm">Working as part of the marketing team to develop and improve a growth driven SAAS marketing website.</p>
                 </HistoryCard>
                 <HistoryCard>                    
                     <p className="title">Copperbay Digital / Web Developer</p>
-                    <p class="text-sm">Developing bespoke sites in WordPress/PHP MVC and ecommerce sites in WooCommerce for a variety of clients across the UK.</p>
+                    <p class="text-sm">Developing a range of bespoke sites in WordPress, PHP MVC and ecommerce sites in WooCommerce for a variety of clients across the UK.</p>
                 </HistoryCard>
                 <HistoryCard>
                     <p className="title">Dot On Technologies / Web Developer</p>
-                    <p class="text-sm">Developing eCommerce sites and features on the Shopify platform</p>
+                    <p class="text-sm">Developing eCommerce sites and features for clients on the Shopify platform.</p>
                 </HistoryCard>
             </WorkHistory>
           </AboutGrid>
