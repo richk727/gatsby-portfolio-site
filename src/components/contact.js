@@ -119,7 +119,12 @@ const ContactText = styled.div`
 `;
 
 const ContactImage = styled.div`
+  display: none;
   position: relative;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
   
   img {
     position: absolute;

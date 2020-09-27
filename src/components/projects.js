@@ -62,11 +62,6 @@ const ProjectCard = styled.article`
     margin-bottom: 0;
   }
 
-  header {
-    display: flex;
-    align-items: center;
-  }
-
   .image-container {
     position: relative;
     min-height: 290px;
@@ -86,6 +81,10 @@ const ProjectCard = styled.article`
 
     @media (min-width: 768px) {
       padding: 2rem;
+    }
+
+    h3 {
+      margin-bottom: 0;
     }
   }
 
@@ -246,6 +245,12 @@ const ImageOverlayContainer = styled.div`
     }
   }
 `;
+const SectionTitle = styled.h2`
+  text-align: center;
+  @media (min-width: 900px) {
+    text-align: left;
+  }
+`;
 
 const Projects = () => {
   const {allMarkdownRemark} = useStaticQuery(LISTING_QUERY);
@@ -257,9 +262,7 @@ const Projects = () => {
   return (
     <section id="projects">
       <Container>
-        <header>
-          <h2>Personal Projects</h2>
-        </header>
+        <SectionTitle><span>P</span>ersonal Projects</SectionTitle>
         <ProjectsGrid>
           {allMarkdownRemark.edges.map(({node}) => (
             <ProjectCard key={node.id}>

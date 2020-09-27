@@ -23,18 +23,10 @@ const LISTING_QUERY = graphql`
               date(formatString: "YYYY")
               imageAlt
               tools
-              color
-              
+              url              
               image {
                 childImageSharp {
                   fluid(maxWidth: 520, maxHeight: 308, quality: 90, cropFocus: NORTH, base64Width: 42) {
-                  ...GatsbyImageSharpFluid
-                  }
-                }
-              }
-              logo {
-                childImageSharp {
-                  fluid(maxWidth: 235, quality: 90) {
                   ...GatsbyImageSharpFluid
                   }
                 }
@@ -156,6 +148,14 @@ const ImageOverlay = styled.div`
   }
 `;
 
+const SectionTitle = styled.h2`
+  text-align: center;
+
+  @media (min-width: 900px) {
+    text-align: left;
+  }
+`;
+
 const Work = () => {
   const { allMarkdownRemark } = useStaticQuery(LISTING_QUERY);
   let splitTools = function (string) {
@@ -165,9 +165,7 @@ const Work = () => {
   return (
     <section id="work">
       <Container>
-        <header>
-          <h2>Work</h2>
-        </header>
+        <SectionTitle><span>W</span>ork</SectionTitle>
         <WorkGrid>
           {allMarkdownRemark.edges.map(({ node }) => (
             <WorkCard key={node.id}>
