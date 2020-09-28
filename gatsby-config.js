@@ -50,6 +50,14 @@ module.exports = {
         ],
         display: 'swap'
       }
+    },
+    {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+          bucketName: 'richardkaye.co.uk',
+          protocol: "https",
+          hostname: "https://richardkaye.co.uk/",
+      },
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
