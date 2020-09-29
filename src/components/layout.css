@@ -536,6 +536,7 @@ li > p {
   margin-bottom: calc(1.45rem / 2);
 }
 code {
+  margin: 0 2px;
   padding: 2px 5px;
   font-size: 0.8rem;
   line-height: 1.45rem;

@@ -96,7 +96,7 @@ const ProjectCard = styled.article`
     list-style: none;
     li {
       padding: 4px 0;
-      opacity: 0.7;
+      color: #434d82;
       font-size: 13.6px;
 
       &:not(:last-of-type) {
@@ -284,8 +284,8 @@ const Projects = () => {
               <div className="content">
                 <h3>{node.frontmatter.title}</h3>
                 <ul className="content__meta">
-                  {splitCategories(node.frontmatter.categories).map((item) => (
-                    <li>{item}</li>
+                  {splitCategories(node.frontmatter.categories).map((item, index) => (
+                    <li key={index}>{item}</li>
                   ))}
                 </ul>
                 <div dangerouslySetInnerHTML={{

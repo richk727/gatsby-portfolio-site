@@ -20,14 +20,30 @@ const AboutGrid = styled.div`
 `;
 const AboutContent = styled.div`
     max-width: 623px;
-    p {        
+    p:first-of-type {        
         font-size: 1.176rem;
+        font-weight: 700;
+    }
+
+    a {
+        position: relative;
+        color: var(--primary-accent);
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 225ms ease-in-out;
+        
+        &:hover {
+            color: var(--secondary-accent);
+        }
     }
 `;
 
 const WorkHistory = styled.div`
     position: relative;
     padding-top: 0.75rem;
+    h3 {
+        margin-bottom: 32px;
+    }
 `;
 
 const HistoryCard = styled.div`

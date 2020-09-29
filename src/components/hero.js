@@ -155,7 +155,7 @@ export default function Hero() {
         <Container>
           <HeroContent>            
             <HeroText>
-              <h1><span class="highlight">R</span><span class="small">ichard</span><br /><span class="highlight">K</span>aye</h1>
+              <h1><span className="highlight">R</span><span className="small">ichard</span><br /><span className="highlight">K</span>aye</h1>
               <p>Web Developer</p>
             </HeroText>
             <HeroImage>
