@@ -244,11 +244,13 @@ const Work = () => {
                   <div className="highlight-2"></div>
                 </ImageOverlay>
               </div>
-              <div className="content">
+              <div className="content" data-sal="slide-up"
+            data-sal-easing="ease"
+            data-sal-duration="500">
                 <h3>{node.frontmatter.title}</h3>
                 <ul className="content__meta">
-                  {splitTools(node.frontmatter.tools).map((item) => (
-                    <li>{item}</li>
+                  {splitTools(node.frontmatter.tools).map((item, index) => (
+                    <li key={index}>{item}</li>
                   ))}
                 </ul>
                 <div dangerouslySetInnerHTML={{
