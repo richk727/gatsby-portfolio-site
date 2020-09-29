@@ -45,8 +45,8 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `Raleway\:600,700`,
-          `Open Sans\:300,400,600` // you can also specify font weights and styles
+          `Raleway\:700`,
+          `Open Sans\:400,600` // you can also specify font weights and styles
         ],
         display: 'swap'
       }
