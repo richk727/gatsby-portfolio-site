@@ -116,26 +116,24 @@ const About = () => (
       <Container>
         <AboutGrid>
             <AboutContent>
-                <header>
-                    <h2>About Me</h2>
-                </header>  
+                <h2>About Me</h2>
                 <p>Hey I'm Rich, a web developer with over 4 years of commercial experience developing and implementing bespoke websites for clients across the UK!</p>
-                <p>I've worked on a wide range of clients from marketing sites in <code>WordPress</code>Primarily I develop sites in the LAMP stack using either <code>WordPress</code> or <code>Laravel</code>. Currently I work as part of the awesome marketing team <a href="https://www.veeqo.com/" target="_blank" rel="noopener noreferrer">Veeqo</a> developing their kickass marketing site.</p>
-                <p>On the side I'm currently diving into the world of <code>React</code> and using frameworks such as <code>Gatsby</code> to create lightning fast sites like the one you're seeing right now!</p>
+                <p>I have worked on a wide range of sites from landing pages to ecommerce sites primarily using <code>WordPress</code>, <code>WooCommerce</code> and <code>Shopify</code>. Now, I work as part of the awesome marketing team at <a href="https://www.veeqo.com/" target="_blank" rel="noopener noreferrer">Veeqo</a> developing their kickass marketing site.</p>
+                <p>In my free time, I am diving into the world of <code>React</code> and using frameworks such as <code>Gatsby</code> to create lightning fast sites like the one you're seeing right now!</p>
             </AboutContent>
             <WorkHistory>
                 <h3>Work History</h3>
                 <HistoryCard>
                     <p className="title">Veeqo / Front End Web Developer</p>
-                    <p class="text-sm">Working as part of the marketing team to develop and improve a growth driven SAAS marketing website.</p>
+                    <p className="text-sm">Working as part of the marketing team to enhance a growth driven SAAS marketing website.</p>
                 </HistoryCard>
                 <HistoryCard>                    
                     <p className="title">Copperbay Digital / Web Developer</p>
-                    <p class="text-sm">Developing a range of bespoke sites in WordPress, PHP MVC and ecommerce sites in WooCommerce for a variety of clients across the UK.</p>
+                    <p className="text-sm">Developing bespoke sites for a variety of clients across the UK, using WordPress and custom PHP as well as WooCommerce for ecommerce sites.</p>
                 </HistoryCard>
                 <HistoryCard>
                     <p className="title">Dot On Technologies / Web Developer</p>
-                    <p class="text-sm">Developing eCommerce sites and features for clients on the Shopify platform.</p>
+                    <p className="text-sm">Developing ecommerce sites and features for a range of clients using the Shopify platform.</p>
                 </HistoryCard>
             </WorkHistory>
           </AboutGrid>
