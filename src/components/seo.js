@@ -68,7 +68,9 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      <link rel="preconnect" href="https://fonts.googleapis.com"></link>
+    </Helmet>
   )
 }
 

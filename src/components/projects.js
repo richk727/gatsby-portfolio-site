@@ -64,6 +64,8 @@ const ProjectCard = styled.article`
 
   .image-container {
     position: relative;
+    display: flex;
+    flex-direction: column;
     min-height: 290px;
     overflow: hidden;
     border-radius: 8px 8px 0 0;
@@ -269,7 +271,7 @@ const Projects = () => {
               <div className="image-container">
                 <Img fluid={node.frontmatter.image.childImageSharp.fluid}
                   alt={node.frontmatter.title}
-                  style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }}
+                  style={{ flex: '1 0 auto' }}
                   imgStyle={{ objectPosition: 'center left' }}
                 />
                 <ImageOverlayContainer>

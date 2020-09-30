@@ -42,13 +42,18 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts-v2`,
       options: {
         fonts: [
-          `Raleway\:700`,
-          `Open Sans\:400,600` // you can also specify font weights and styles
-        ],
-        display: 'swap'
+          {
+            family: 'Raleway',
+            weights: ['700']
+          },
+          {
+            family: 'Open Sans',
+            weights: ['400', '600']
+          }
+        ]
       }
     },
     {
@@ -74,9 +79,12 @@ module.exports = {
           enterEventName: 'sal:in', // Enter event name
           exitEventName: 'sal:out', // Exit event name
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-styled-components`
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 }
