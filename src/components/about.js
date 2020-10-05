@@ -10,7 +10,7 @@ const AboutGrid = styled.div`
     column-gap: 2rem;
     grid-template-columns: 1fr;
 
-    @media (min-width: 768px) {
+    @media (min-width: 900px) {
         column-gap: 2rem;
         grid-template-columns: 1fr 373px;
     }
@@ -118,7 +118,7 @@ const About = () => (
             <AboutContent>
                 <h2>About Me</h2>
                 <p>Hey I'm Rich, a web developer with over 4 years of commercial experience developing and implementing bespoke websites for clients across the UK!</p>
-                <p>I have worked on a wide range of sites from landing pages to ecommerce sites primarily using <code>WordPress</code>, <code>WooCommerce</code> and <code>Shopify</code>. Now, I work as part of the awesome marketing team at <a href="https://www.veeqo.com/" target="_blank" rel="noopener noreferrer">Veeqo</a> developing their kickass marketing site.</p>
+                <p>I have worked on a wide range of sites from landing pages to ecommerce sites primarily using <code>WordPress</code>, <code>WooCommerce</code> and <code>Shopify</code>. Now, I work as part of the awesome marketing team at <a href="https://www.veeqo.com/" target="_blank" rel="noopener noreferrer">Veeqo</a> developing it's kickass marketing site.</p>
                 <p>In my free time, I am diving into the world of <code>React</code> and using frameworks such as <code>Gatsby</code> to create lightning fast sites like the one you're seeing right now!</p>
             </AboutContent>
             <WorkHistory>

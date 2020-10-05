@@ -73,6 +73,7 @@ const WorkCard = styled.article`
 
   .image-container {
     position: relative;
+    min-height: 250px;
     overflow: hidden;
     border-radius: 8px 8px 0 0;
     img {
@@ -82,7 +83,10 @@ const WorkCard = styled.article`
 
   .content {
     flex: 1 0 auto;
-    padding: 1rem 32px 0;
+    padding: 0 1.5rem 0;
+    @media (min-width: 768px) {
+      padding: 1rem 2rem 0;
+    }
 
     h3 {
       margin-bottom: 0.5rem;
@@ -112,9 +116,13 @@ const WorkCard = styled.article`
     }
   }
   .footer {
-    padding: 0 32px 2rem;
+    padding: 0 1.5rem 1.5rem;
+    @media (min-width: 768px) {
+      padding: 0 2rem 2rem;
+    }
     .btn {
-      display: inline-flex;
+      display: flex;
+      align-items: center;
       font-size: 14px;
       font-weight: 600;
       padding: 4px 0;
@@ -123,6 +131,7 @@ const WorkCard = styled.article`
       transition: all 225ms ease-in-out;
       svg {
         display: block;
+        height: 13px;
         width: 13px;
         margin-left: 8px;
         fill: var(--primary-accent);

@@ -41,7 +41,11 @@ const ProjectsGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 4rem;
-  margin-bottom: 10rem;
+  margin-bottom: 4rem;
+
+  @media (min-width: 768px) {
+    margin-bottom: 10rem;
+  }
 `;
 
 const ProjectCard = styled.article`
@@ -79,7 +83,7 @@ const ProjectCard = styled.article`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 2rem 2rem;
+    padding: 0 1.5rem 1.5rem;
 
     @media (min-width: 768px) {
       padding: 2rem;

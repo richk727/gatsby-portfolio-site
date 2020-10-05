@@ -7,7 +7,7 @@ import codingImage from "../images/coding-image.svg"
 const HeroBody = styled.div`
   position: relative;
   margin-bottom: 5rem;
-  padding: 120px 0 350px;
+  padding: 120px 0 200px;
   background: linear-gradient(-7.35deg, #fff 50%, var(--primary-accent) 51%);
   @media (min-width: 768px) {
     margin-bottom: 7.5rem;

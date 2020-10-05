@@ -9,9 +9,12 @@ import codepenLogo from "../images/codepen-logo.svg"
 
 const ContactBody = styled.div`
   position: relative;
-  padding: 100px 0 140px;
+  padding: 50px 0 140px;
   background: var(--primary-accent);
   overflow: hidden;
+  @media (min-width: 768px) {
+    padding: 100px 0 140px;
+  }
 `;
 
 const ContactBG = styled.div`
@@ -104,9 +107,12 @@ const ContactText = styled.div`
     margin-bottom: 2rem;
     color: #fff;
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 1.4rem;
     font-weight: 700;
     transition: all 225ms ease-in-out;
+    @media (min-width: 576px) {
+      font-size: 2rem;
+    }
     
     &:hover {
       color: var(--secondary-accent);
