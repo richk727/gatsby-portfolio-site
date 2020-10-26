@@ -6,6 +6,8 @@ import Img from "gatsby-image"
 import Container from "../components/container"
 import Seperator from "../components/seperator"
 
+import { Hex2RGBA } from "../utils/CommonFunctions";
+
 
 const LISTING_QUERY = graphql`
   query WorkListing {    
@@ -28,14 +30,14 @@ const LISTING_QUERY = graphql`
               image {
                 childImageSharp {
                   fluid(maxWidth: 520, maxHeight: 308, quality: 90, cropFocus: NORTH, base64Width: 42) {
-                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluid_withWebp
                   }
                 }
               }
               logo {
                 childImageSharp {
                   fluid(maxWidth: 200, quality: 90) {
-                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluid_withWebp
                   }
                 }
               }
@@ -203,7 +205,7 @@ const ImgLogoBG = styled.div`
   align-items: center;
   justify-content: flex-start;
   padding: 0 32px 32px;
-  background-color: ${props => hexToRgbA(props.color, 0.85)};
+  background-color: ${props => Hex2RGBA(props.color, 0.85)};
 
   .gatsby-image-wrapper {
     width: 200px;
@@ -217,11 +219,6 @@ const SectionTitle = styled.h2`
     text-align: left;
   }
 `;
-
-const hexToRgbA = (hex, alpha = 1) => {
-  const [r, g, b] = hex.match(/\w\w/g).map(x => parseInt(x, 16));
-  return `rgba(${r},${g},${b},${alpha})`;
-};
 
 const Work = () => {
   const { allMarkdownRemark } = useStaticQuery(LISTING_QUERY);

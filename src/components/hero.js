@@ -86,50 +86,58 @@ const HeroText = styled.div`
 
   h1 {
     color: #fff;
-    font-size: clamp(100px,7vw,126px);
+    font-size: 100px;
     line-height: 0.8;
+
+    @media (min-width: 768px) {
+      font-size: 126px;
+    } 
     
     .highlight {
       color: var(--secondary-accent);
     }
+
     .small {
-      font-size: clamp(71px,5vw,90px);
-    }
-    @media (min-width: 768px) {
+      font-size: 71px;
+      @media (min-width: 768px) {
+        font-size: 90px;
+      }
     }
   }
 
   p {
     margin-bottom: 1.45rem;
     color: #fff;
-    font-size: clamp(0.85rem, 1vw, 1rem);
+    font-size: 0.85rem;
     font-weight: 400;    
     text-transform: uppercase;
     transform: translate(10px, -25px);
 
     @media (min-width: 768px) {
+      font-size: 1rem;
       transform: translate(10px, -23px);
     }
   }
 `;
 
 const HeroImage = styled.div`
-  position: relative;
-  margin-bottom: -60%;
-  text-align: center;
+    position: absolute;
+    text-align: center;
+    left: 10%;
+    right: 10%;
+    bottom: -10%;
+    margin-bottom: 0;
+    transform: skewY(7.35deg);
   
   @media (min-width: 768px) {
-    text-align: right;
-    margin-bottom: -50%;
+    bottom: -20%;
+    left: 50%;
+    right: auto;
   }
 
   img {
-    /* position: absolute;
-    top: -70px;
-    left: 0;
-    right:0; */
     position: relative;
-    width: 410px;
+    width: 310px;
     max-width: 100%;
     
 
@@ -151,6 +159,9 @@ export default function Hero() {
           <div className="stripe-3"></div>
           <div className="highlight-1"></div>
           <div className="highlight-2"></div>
+          <HeroImage>
+              <img src={codingImage} alt="Richard Kaye a UK based web developer coding away"/>
+            </HeroImage>
         </HeroBG>
         <Container>
           <HeroContent>            
@@ -158,9 +169,7 @@ export default function Hero() {
               <h1><span className="highlight">R</span><span className="small">ichard</span><br /><span className="highlight">K</span>aye</h1>
               <p>Web Developer</p>
             </HeroText>
-            <HeroImage>
-              <img src={codingImage} alt="Richard Kaye a UK based web developer coding away"/>
-            </HeroImage>
+
           </HeroContent>
         </Container>
       </HeroBody>
