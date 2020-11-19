@@ -1,10 +1,9 @@
-import PropTypes from "prop-types"
-import React from "react"
+import PropTypes from 'prop-types'
+import React from 'react'
 import styled from 'styled-components'
-import { AnchorLink } from "gatsby-plugin-anchor-links"
+import { AnchorLink } from 'gatsby-plugin-anchor-links'
 
-
-import Container from "../components/container"
+import Container from './container'
 
 const HeaderWrapper = styled.div`
   position: absolute;
@@ -12,17 +11,17 @@ const HeaderWrapper = styled.div`
   right: 0;
   left: 0;
   z-index: 1;
-`;
+`
 
 const HeaderContainer = styled.div`
   display: flex;
   justify-content: center;
   padding: 1rem 0;
 
-  @media(min-width: 1024px) {
+  @media (min-width: 1024px) {
     justify-content: flex-end;
   }
-`;
+`
 
 const Navbar = styled.nav`
   ul {
@@ -48,7 +47,7 @@ const Navbar = styled.nav`
       opacity: 0.8;
     }
   }
-`;
+`
 const Header = ({ siteTitle }) => (
   <HeaderWrapper>
     <Container>

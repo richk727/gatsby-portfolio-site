@@ -6,7 +6,7 @@
 
 // You can delete this file if you're not using it
 exports.onClientEntry = () => {
-    window.addEventListener('load', () => {
-      document.body.className = document.body.className.replace(/\bno-js\b/, '');
-    });
-  }
+  window.addEventListener('load', () => {
+    document.body.className = document.body.className.replace(/\bno-js\b/, '')
+  })
+}

@@ -1,8 +1,8 @@
-import React from "react"
+import React from 'react'
 import styled from 'styled-components'
 
-import Container from "../components/container"
-import codingImage from "../images/coding-image.svg"
+import Container from './container'
+import codingImage from '../images/coding-image.svg'
 
 const HeroBody = styled.div`
   position: relative;
@@ -13,7 +13,7 @@ const HeroBody = styled.div`
     margin-bottom: 7.5rem;
     padding: 165px 0 205px;
   }
-`;
+`
 
 const HeroBG = styled.div`
   position: absolute;
@@ -31,7 +31,11 @@ const HeroBG = styled.div`
     bottom: 0;
     left: 0;
     height: 220px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.3) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
   }
   .stripe-2 {
     position: absolute;
@@ -39,7 +43,11 @@ const HeroBG = styled.div`
     bottom: 0;
     left: 0;
     height: 120px;
-    background: linear-gradient(90deg, rgba(118, 137, 245, 0.6) 49.35%, rgba(255, 255, 255, 0.6) 81.76%);
+    background: linear-gradient(
+      90deg,
+      rgba(118, 137, 245, 0.6) 49.35%,
+      rgba(255, 255, 255, 0.6) 81.76%
+    );
   }
   .stripe-3 {
     position: absolute;
@@ -47,7 +55,7 @@ const HeroBG = styled.div`
     bottom: 0;
     left: 0;
     height: 60px;
-    background: rgba(255,255,255,0.4);
+    background: rgba(255, 255, 255, 0.4);
     transform: scale(-1);
   }
 
@@ -57,7 +65,11 @@ const HeroBG = styled.div`
     bottom: 118px;
     left: 0;
     height: 4px;
-    background: linear-gradient(90deg, rgba(118, 137, 245, 0.6) 49.35%, rgba(255, 255, 255, 0.6) 81.76%);
+    background: linear-gradient(
+      90deg,
+      rgba(118, 137, 245, 0.6) 49.35%,
+      rgba(255, 255, 255, 0.6) 81.76%
+    );
   }
 
   .highlight-2 {
@@ -66,9 +78,13 @@ const HeroBG = styled.div`
     bottom: 118px;
     left: 80%;
     height: 4px;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.6)  49.35%, rgba(118, 137, 245, 0.6)81.76%);
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.6) 49.35%,
+      rgba(118, 137, 245, 0.6) 81.76%
+    );
   }
-`;
+`
 
 const HeroContent = styled.div`
   display: grid;
@@ -77,7 +93,7 @@ const HeroContent = styled.div`
   @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
   }
-`;
+`
 
 const HeroText = styled.div`
   position: relative;
@@ -91,8 +107,8 @@ const HeroText = styled.div`
 
     @media (min-width: 768px) {
       font-size: 126px;
-    } 
-    
+    }
+
     .highlight {
       color: var(--secondary-accent);
     }
@@ -109,7 +125,7 @@ const HeroText = styled.div`
     margin-bottom: 1.45rem;
     color: #fff;
     font-size: 0.85rem;
-    font-weight: 400;    
+    font-weight: 400;
     text-transform: uppercase;
     transform: translate(10px, -25px);
 
@@ -118,17 +134,17 @@ const HeroText = styled.div`
       transform: translate(10px, -23px);
     }
   }
-`;
+`
 
 const HeroImage = styled.div`
-    position: absolute;
-    text-align: center;
-    left: 10%;
-    right: 10%;
-    bottom: -10%;
-    margin-bottom: 0;
-    transform: skewY(7.35deg);
-  
+  position: absolute;
+  text-align: center;
+  left: 10%;
+  right: 10%;
+  bottom: -10%;
+  margin-bottom: 0;
+  transform: skewY(7.35deg);
+
   @media (min-width: 768px) {
     bottom: -20%;
     left: 50%;
@@ -139,7 +155,6 @@ const HeroImage = styled.div`
     position: relative;
     width: 310px;
     max-width: 100%;
-    
 
     @media (min-width: 768px) {
       max-width: 100%;
@@ -147,29 +162,36 @@ const HeroImage = styled.div`
       transform: translateY(-13%);
     }
   }
-`;
+`
 
 export default function Hero() {
   return (
     <section id="hero">
       <HeroBody>
         <HeroBG>
-          <div className="stripe-1"></div>
-          <div className="stripe-2"></div>
-          <div className="stripe-3"></div>
-          <div className="highlight-1"></div>
-          <div className="highlight-2"></div>
+          <div className="stripe-1" />
+          <div className="stripe-2" />
+          <div className="stripe-3" />
+          <div className="highlight-1" />
+          <div className="highlight-2" />
           <HeroImage>
-              <img src={codingImage} alt="Richard Kaye a UK based web developer coding away"/>
-            </HeroImage>
+            <img
+              src={codingImage}
+              alt="Richard Kaye a UK based web developer coding away"
+            />
+          </HeroImage>
         </HeroBG>
         <Container>
-          <HeroContent>            
+          <HeroContent>
             <HeroText>
-              <h1><span className="highlight">R</span><span className="small">ichard</span><br /><span className="highlight">K</span>aye</h1>
+              <h1>
+                <span className="highlight">R</span>
+                <span className="small">ichard</span>
+                <br />
+                <span className="highlight">K</span>aye
+              </h1>
               <p>Web Developer</p>
             </HeroText>
-
           </HeroContent>
         </Container>
       </HeroBody>

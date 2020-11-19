@@ -38,50 +38,43 @@ module.exports = {
     {
       resolve: `gatsby-plugin-anchor-links`,
       options: {
-        offset: -100
-      }
+        offset: -100,
+      },
     },
     {
-      resolve: `gatsby-plugin-google-fonts-v2`,
+      resolve: `gatsby-plugin-web-font-loader`,
       options: {
-        fonts: [
-          {
-            family: 'Raleway',
-            weights: ['700']
-          },
-          {
-            family: 'Open Sans',
-            weights: ['400', '600']
-          }
-        ]
-      }
+        google: {
+          families: ['Raleway:700', 'Open Sans:400,500'],
+        },
+      },
     },
     {
       resolve: `gatsby-plugin-s3`,
       options: {
-          bucketName: 'richardkaye.co.uk',
-          protocol: "https",
-          hostname: "https://richardkaye.co.uk/",
+        bucketName: 'richardkaye.co.uk',
+        protocol: 'https',
+        hostname: 'https://richardkaye.co.uk/',
       },
     },
     {
       resolve: `gatsby-plugin-scroll-reveal`,
       options: {
-          threshold: 1, // Percentage of an element's area that needs to be visible to launch animation
-          once: true, // Defines if animation needs to be launched once
-          disable: false, // Flag for disabling animations
-          
-          // Advanced Options
-          selector: '[data-sal]', // Selector of the elements to be animated
-          animateClassName: 'sal-animate', // Class name which triggers animation
-          disabledClassName: 'sal-disabled', // Class name which defines the disabled state
-          rootMargin: '0% 50%', // Corresponds to root's bounding box margin
-          enterEventName: 'sal:in', // Enter event name
-          exitEventName: 'sal:out', // Exit event name
-      }
+        threshold: 1, // Percentage of an element's area that needs to be visible to launch animation
+        once: true, // Defines if animation needs to be launched once
+        disable: false, // Flag for disabling animations
+
+        // Advanced Options
+        selector: '[data-sal]', // Selector of the elements to be animated
+        animateClassName: 'sal-animate', // Class name which triggers animation
+        disabledClassName: 'sal-disabled', // Class name which defines the disabled state
+        rootMargin: '0% 50%', // Corresponds to root's bounding box margin
+        enterEventName: 'sal:in', // Enter event name
+        exitEventName: 'sal:out', // Exit event name
+      },
     },
     {
-      resolve: `gatsby-plugin-styled-components`
+      resolve: `gatsby-plugin-styled-components`,
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
