@@ -292,6 +292,7 @@ const Projects = () => {
   const { allMarkdownRemark } = useStaticQuery(LISTING_QUERY)
 
   const splitCategories = function (string) {
+    if (!string) return []
     return string.split('|')
   }
 
