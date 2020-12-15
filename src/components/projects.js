@@ -2,7 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
-
+import SectionTitle from './SectionTitle'
+import SectionSubheading from './SectionSubheading'
 import Container from './container'
 
 const LISTING_QUERY = graphql`
@@ -281,12 +282,6 @@ const ImageOverlayContainer = styled.div`
     }
   }
 `
-const SectionTitle = styled.h2`
-  text-align: center;
-  @media (min-width: 900px) {
-    text-align: left;
-  }
-`
 
 const Projects = () => {
   const { allMarkdownRemark } = useStaticQuery(LISTING_QUERY)
@@ -299,9 +294,11 @@ const Projects = () => {
   return (
     <section id="projects">
       <Container>
-        <SectionTitle>
-          <span>P</span>ersonal Projects
-        </SectionTitle>
+        <SectionTitle>Personal Projects</SectionTitle>
+        <SectionSubheading>
+          Somethings are just
+          <br /> done for fun
+        </SectionSubheading>
         <ProjectsGrid>
           {allMarkdownRemark.edges.map(({ node }) => (
             <ProjectCard key={node.id}>

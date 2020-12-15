@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import blobPattern from '../images/blob-pattern.svg'
 
 import Container from './container'
 
@@ -9,55 +10,70 @@ import { Hex2RGBA } from '../utils/CommonFunctions'
 import SectionTitle from './SectionTitle'
 import SectionSubheading from './SectionSubheading'
 
+import PortfolioCardStyles from '../styles/PortfolioCardStyles'
+import PortfolioShortCardStyles from '../styles/PortfolioShortCardStyles'
+
 const Section = styled.div`
   margin-top: 15rem;
 `
-const PortfolioGrid = styled.div``
-
-const PortfolioCard = styled.article`
-  @media (min-width: 1024px) {
-    display: grid;
-    grid-template-columns: 516px 420px;
-    gap: 6.4rem;
-    &:nth-of-type(odd) {
-      grid-template-columns: 420px 516px;
-      .media {
-        order: 2;
-      }
-    }
-  }
-  .media {
-    .image-container {
-      max-width: 516px;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1),
-        0px 15px 35px rgba(50, 50, 93, 0.1),
-        0px 50px 100px rgba(50, 50, 93, 0.05);
-    }
-  }
-
-  .content {
-    h3 {
-      margin: 0 0 1.6rem;
-      font-size: 5.188rem;
-      font-weight: 700;
-      line-height: 1.65;
-    }
-
-    &__meta {
-      display: flex;
-      flex-wrap: wrap;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-  }
+const PortfolioGridStyles = styled.div`
+  display: grid;
+  gap: 12.8rem;
+  margin-top: -1rem;
+  margin-bottom: 12.8rem;
 `
 
 const ImageOverlay = styled.div``
 
-const ImgLogoBG = styled.div``
+const ImgLogoBgStyles = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  background-color: ${props => Hex2RGBA(props.color, 0.85)};
+  border-radius: 8px;
+  overflow: hidden;
+  .gatsby-image-wrapper {
+    width: 200px;
+  }
+`
+
+const ImageBGStyles = styled.img`
+  position: absolute;
+  top: -31%;
+  left: -14.5%;
+  width: 115%;
+  max-width: 115%;
+
+  &.bg--1 {
+    top: auto;
+    right: auto;
+    bottom: -10%;
+    opacity: 0.6;
+    width: 75%;
+    max-width: 75%;
+  }
+  &.bg--2 {
+    left: auto;
+    right: -20%;
+    opacity: 0.3;
+    width: 75%;
+    max-width: 75%;
+  }
+`
+
+const MorePortfolioGridStyles = styled.div`
+  display: grid;
+  gap: 6.4rem;
+  margin-bottom: 12.8rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+`
 
 const Work = () => {
   const { allMarkdownRemark } = useStaticQuery(PORTFOLIO_QUERY)
@@ -76,48 +92,104 @@ const Work = () => {
           <br />
           for clients since 2016
         </SectionSubheading>
-        <PortfolioGrid>
-          {allMarkdownRemark.edges.slice(0, initialItems).map(({ node }) => (
-            <PortfolioCard key={node.id}>
-              <div className="media">
-                <div className="image-container">
-                  <Img
-                    className=""
-                    fluid={node.frontmatter.image.childImageSharp.fluid}
-                  />
-                  <ImageOverlay />
+        <PortfolioGridStyles>
+          {allMarkdownRemark.edges
+            .slice(0, initialItems)
+            .map(({ node }, index) => (
+              <PortfolioCardStyles key={node.id}>
+                <div className="media">
+                  <div className="image-container">
+                    <ImageBGStyles
+                      className={`bg--${index}`}
+                      src={blobPattern}
+                      alt=""
+                    />
+                    <Img
+                      className=""
+                      fluid={node.frontmatter.image.childImageSharp.fluid}
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className="content">
-                <div className="text">
-                  <h3>{node.frontmatter.title}</h3>
-                  <ul className="content__meta">
-                    {splitTools(node.frontmatter.tools).map((item, index) => (
-                      <li key={index}>{item}</li>
-                    ))}
-                  </ul>
-                  <div
-                    dangerouslySetInnerHTML={{
-                      __html: node.html,
-                    }}
-                  />
+                <div className="content">
+                  <div>
+                    <div className="text">
+                      <h3>{node.frontmatter.title}</h3>
+                      <ul className="content__meta">
+                        {splitTools(node.frontmatter.tools).map(
+                          (item, index) => (
+                            <li key={index}>{item}</li>
+                          )
+                        )}
+                      </ul>
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: node.html,
+                        }}
+                      />
+                    </div>
+                    <div className="footer" />
+                    {node.frontmatter.url && (
+                      <a
+                        className="btn"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        href={node.frontmatter.url}
+                      >
+                        View Site
+                      </a>
+                    )}
+                  </div>
                 </div>
-                <div className="footer">
-                  {node.frontmatter.url && (
-                    <a
-                      className="btn"
-                      target="_blank"
-                      rel="noreferrer noopener"
-                      href={node.frontmatter.url}
-                    >
-                      View Site
-                    </a>
-                  )}
+              </PortfolioCardStyles>
+            ))}
+        </PortfolioGridStyles>
+        <MorePortfolioGridStyles>
+          {allMarkdownRemark.edges
+            .slice(initialItems, initialItems + initialItems)
+            .map(({ node }, index) => (
+              <PortfolioShortCardStyles key={node.id}>
+                <div className="media">
+                  <div className="image-container">
+                    <Img
+                      className=""
+                      fluid={node.frontmatter.image.childImageSharp.fluid}
+                    />
+                    <ImgLogoBgStyles color={node.frontmatter.color}>
+                      <Img
+                        className=""
+                        fluid={node.frontmatter.logo.childImageSharp.fluid}
+                      />
+                    </ImgLogoBgStyles>
+                  </div>
                 </div>
-              </div>
-            </PortfolioCard>
-          ))}
-        </PortfolioGrid>
+                <div className="content">
+                  <div>
+                    <div className="text">
+                      <h3>{node.frontmatter.title}</h3>
+                      <ul className="content__meta">
+                        {splitTools(node.frontmatter.tools).map(
+                          (item, index) => (
+                            <li key={index}>{item}</li>
+                          )
+                        )}
+                      </ul>
+                    </div>
+                    <div className="footer" />
+                    {node.frontmatter.url && (
+                      <a
+                        className="btn"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        href={node.frontmatter.url}
+                      >
+                        View Site
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </PortfolioShortCardStyles>
+            ))}
+        </MorePortfolioGridStyles>
       </Container>
     </Section>
   )
@@ -145,8 +217,8 @@ const PORTFOLIO_QUERY = graphql`
             image {
               childImageSharp {
                 fluid(
-                  maxWidth: 520
-                  maxHeight: 308
+                  maxWidth: 516
+                  maxHeight: 390
                   quality: 90
                   cropFocus: NORTH
                   base64Width: 42

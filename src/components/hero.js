@@ -32,6 +32,7 @@ const HeroText = styled.div`
     transform: translateX(-6px);
   }
   .subheading {
+    margin-bottom: 3rem;
     font-size: 2.656rem;
     font-weight: 600;
     line-height: 1.3;
