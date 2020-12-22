@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import SectionTitle from './SectionTitle'
 import SectionSubheading from './SectionSubheading'
-import Container from './container'
+import Container from './Container'
 
 const LISTING_QUERY = graphql`
   query ProjectsListing {

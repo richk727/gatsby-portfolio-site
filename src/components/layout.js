@@ -10,9 +10,9 @@ import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 
-import Header from './header'
-import Container from './container'
-import './layout.css'
+import Header from './Header'
+import Container from './Container'
+import '../styles/layout.css'
 
 const SiteFooter = styled.footer`
   position: relative;

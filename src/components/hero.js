@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
-import Container from './container'
+import Container from './Container'
 import heroImage from '../images/hero-image.png'
 
 const HeroBody = styled.div``

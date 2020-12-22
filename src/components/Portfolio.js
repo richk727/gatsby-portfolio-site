@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import blobPattern from '../images/blob-pattern.svg'
 
-import Container from './container'
+import Container from './Container'
 
 import { Hex2RGBA } from '../utils/CommonFunctions'
 import SectionTitle from './SectionTitle'

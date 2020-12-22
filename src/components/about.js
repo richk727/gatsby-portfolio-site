@@ -1,10 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Container from './container'
+import Container from './Container'
 import SectionSubheading from './SectionSubheading'
 import SectionTitle from './SectionTitle'
-import Seperator from './seperator'
 
 const AboutGrid = styled.div``
 

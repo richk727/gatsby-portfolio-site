@@ -3,7 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
 
-import Container from './container'
+import Container from './Container'
 
 const HeaderWrapper = styled.div`
   position: relative;
