@@ -18,9 +18,10 @@ const SiteFooter = styled.footer`
   position: relative;
   display: flex;
   justify-content: space-between;
-  margin-top: -23px;
-  color: #fff;
-  font-size: 0.64rem;
+  margin-top: 2rem;
+  padding-bottom: 4rem;
+  color: var(--body-color);
+  font-size: 1.36rem;
   opacity: 0.8;
 `
 

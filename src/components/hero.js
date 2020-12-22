@@ -1,166 +1,76 @@
 import React from 'react'
 import styled from 'styled-components'
-
+import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import Container from './container'
-import codingImage from '../images/coding-image.svg'
+import heroImage from '../images/hero-image.png'
 
-const HeroBody = styled.div`
-  position: relative;
-  margin-bottom: 5rem;
-  padding: 120px 0 200px;
-  background: linear-gradient(-7.35deg, #fff 50%, var(--primary-accent) 51%);
-  @media (min-width: 768px) {
-    margin-bottom: 7.5rem;
-    padding: 165px 0 205px;
-  }
-`
+const HeroBody = styled.div``
 
-const HeroBG = styled.div`
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: var(--primary-accent);
-  transform: skewY(-7.35deg);
+const HeroBG = styled.div``
 
-  .stripe-1 {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: 220px;
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.3) 0%,
-      rgba(255, 255, 255, 0) 100%
-    );
-  }
-  .stripe-2 {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: 120px;
-    background: linear-gradient(
-      90deg,
-      rgba(118, 137, 245, 0.6) 49.35%,
-      rgba(255, 255, 255, 0.6) 81.76%
-    );
-  }
-  .stripe-3 {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: 60px;
-    background: rgba(255, 255, 255, 0.4);
-    transform: scale(-1);
-  }
-
-  .highlight-1 {
-    position: absolute;
-    right: 50%;
-    bottom: 118px;
-    left: 0;
-    height: 4px;
-    background: linear-gradient(
-      90deg,
-      rgba(118, 137, 245, 0.6) 49.35%,
-      rgba(255, 255, 255, 0.6) 81.76%
-    );
-  }
-
-  .highlight-2 {
-    position: absolute;
-    right: 0;
-    bottom: 118px;
-    left: 80%;
-    height: 4px;
-    background: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.6) 49.35%,
-      rgba(118, 137, 245, 0.6) 81.76%
-    );
-  }
-`
-
-const HeroContent = styled.div`
+const HeroGrid = styled.div`
   display: grid;
-  grid-template-columns: 1fr;
-
-  @media (min-width: 768px) {
-    grid-template-columns: 1fr 1fr;
-  }
+  grid-template-columns: 540px 1fr;
+  gap: 1.6rem;
 `
 
 const HeroText = styled.div`
-  position: relative;
-  height: 100%;
-  transform: translateX(-8px);
-
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+  padding: 12.8rem 0;
+  .intro {
+    margin-bottom: 1.6rem;
+    font-size: 2.125rem;
+    font-weight: 600;
+    line-height: 1.5;
+  }
   h1 {
-    color: #fff;
-    font-size: 100px;
+    margin: 0 0 3.2rem;
+    color: var(--primary-accent);
+    font-size: 10rem;
     line-height: 0.8;
-
-    @media (min-width: 768px) {
-      font-size: 126px;
-    }
-
-    .highlight {
-      color: var(--secondary-accent);
-    }
-
-    .small {
-      font-size: 71px;
-      @media (min-width: 768px) {
-        font-size: 90px;
-      }
-    }
+    transform: translateX(-6px);
+  }
+  .subheading {
+    margin-bottom: 3rem;
+    font-size: 2.656rem;
+    font-weight: 600;
+    line-height: 1.3;
   }
 
-  p {
-    margin-bottom: 1.45rem;
-    color: #fff;
-    font-size: 0.85rem;
-    font-weight: 400;
-    text-transform: uppercase;
-    transform: translate(10px, -25px);
+  .button {
+    display: inline-block;
+    align-items: center;
+    width: 200px;
+    padding: 12px 24px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1),
+      0px 15px 35px rgba(50, 50, 93, 0.1), 0px 50px 100px rgba(50, 50, 93, 0.05);
+    transition: all 225ms ease-in-out;
+  }
 
-    @media (min-width: 768px) {
-      font-size: 1rem;
-      transform: translate(10px, -23px);
+  .button--primary {
+    color: #fff;
+    background-color: var(--primary-accent);
+
+    &:hover {
+      transform: translateY(2px);
+      background-color: #4764ff;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0),
+        0px 15px 35px rgba(50, 50, 93, 0), 0px 50px 100px rgba(50, 50, 93, 0);
     }
   }
 `
 
 const HeroImage = styled.div`
-  position: absolute;
-  text-align: center;
-  left: 10%;
-  right: 10%;
-  bottom: -10%;
-  margin-bottom: 0;
-  transform: skewY(7.35deg);
+  max-width: 100%;
 
-  @media (min-width: 768px) {
-    bottom: -20%;
-    left: 50%;
-    right: auto;
-  }
-
-  img {
-    position: relative;
-    width: 310px;
-    max-width: 100%;
-
-    @media (min-width: 768px) {
-      max-width: 100%;
-      width: 535px;
-      transform: translateY(-13%);
-    }
+  @media (min-width: 1440px) {
+    max-width: calc(100% + 180px);
+    width: 150%;
   }
 `
 
@@ -168,31 +78,36 @@ export default function Hero() {
   return (
     <section id="hero">
       <HeroBody>
-        <HeroBG>
-          <div className="stripe-1" />
-          <div className="stripe-2" />
-          <div className="stripe-3" />
-          <div className="highlight-1" />
-          <div className="highlight-2" />
-          <HeroImage>
-            <img
-              src={codingImage}
-              alt="Richard Kaye a UK based web developer coding away"
-            />
-          </HeroImage>
-        </HeroBG>
         <Container>
-          <HeroContent>
+          <HeroGrid>
             <HeroText>
+              <p className="intro">Hello, my name is</p>
               <h1>
-                <span className="highlight">R</span>
-                <span className="small">ichard</span>
+                Richard
                 <br />
-                <span className="highlight">K</span>aye
+                Kaye
               </h1>
-              <p>Web Developer</p>
+              <p className="subheading">
+                I'm a web developer with over 4 years of commercial experience
+                developing and implementing bespoke websites
+              </p>
+              <AnchorLink
+                to="/#contact"
+                title="Let's chat"
+                className="button button--primary"
+                stripHash
+              />
             </HeroText>
-          </HeroContent>
+
+            <HeroBG>
+              <HeroImage>
+                <img
+                  src={heroImage}
+                  alt="Richard Kaye a UK based web developer coding away"
+                />
+              </HeroImage>
+            </HeroBG>
+          </HeroGrid>
         </Container>
       </HeroBody>
     </section>
