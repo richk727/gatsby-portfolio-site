@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Container from './container'
+import Container from './Container'
 import SectionTitle from './SectionTitle'
 import SectionSubheading from './SectionSubheading'
 
@@ -86,11 +86,8 @@ export default function Contact() {
           <ContactText>
             <SectionTitle>Contact</SectionTitle>
             <SectionSubheading>
-              Let’s get the
-              <br />
-              conversation started
+              Let’s get the <span>conversation started</span>
             </SectionSubheading>
-            <h2 />
             <a className="contact-email" href="mailto:hello@richardkaye.co.uk">
               <span>hello</span>@richardkaye.co.uk
             </a>

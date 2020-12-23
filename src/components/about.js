@@ -5,14 +5,20 @@ import Container from './Container'
 import SectionSubheading from './SectionSubheading'
 import SectionTitle from './SectionTitle'
 
+import { device } from '../styles/devices'
+
 const AboutGrid = styled.div``
 
 const AboutContent = styled.div``
 
 const AboutRow = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 4.8rem;
+  grid-gap: 3.2rem;
+
+  @media ${device.md} {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 4.8rem;
+  }
 `
 
 const AboutCard = styled.div`
@@ -33,9 +39,8 @@ const About = () => (
         <AboutContent>
           <SectionTitle>What I Do</SectionTitle>
           <SectionSubheading>
-            I enjoy creating awesome
-            <br />
-            human-centered website experiences.
+            I enjoy creating awesome{' '}
+            <span>human-centered website experiences.</span>
           </SectionSubheading>
           <AboutRow>
             <AboutCard>

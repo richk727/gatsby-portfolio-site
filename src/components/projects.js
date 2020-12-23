@@ -142,8 +142,7 @@ const Projects = () => {
       <Container>
         <SectionTitle>Personal Projects</SectionTitle>
         <SectionSubheading>
-          Some things are just
-          <br /> done for fun
+          Some things are just <span>done for fun</span>
         </SectionSubheading>
         <ProjectsGrid>
           {allMarkdownRemark.edges.map(({ node }) => (

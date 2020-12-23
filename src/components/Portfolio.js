@@ -10,18 +10,19 @@ import { Hex2RGBA } from '../utils/CommonFunctions'
 import SectionTitle from './SectionTitle'
 import SectionSubheading from './SectionSubheading'
 
+import PortfolioGridStyles from '../styles/PortfolioGridStyles'
 import PortfolioCardStyles from '../styles/PortfolioCardStyles'
 import PortfolioShortCardStyles from '../styles/PortfolioShortCardStyles'
 
 const Section = styled.div`
   margin-top: 15rem;
 `
-const PortfolioGridStyles = styled.div`
-  display: grid;
-  gap: 12.8rem;
-  margin-top: -1rem;
-  margin-bottom: 12.8rem;
-`
+// const PortfolioGridStyles = styled.div`
+//   display: grid;
+//   gap: 12.8rem;
+//   margin-top: -1rem;
+//   margin-bottom: 12.8rem;
+// `
 
 const ImageOverlay = styled.div``
 
@@ -89,9 +90,7 @@ const Portfolio = () => {
       <Container>
         <SectionTitle>Portfolio</SectionTitle>
         <SectionSubheading>
-          Delivering succesful websites
-          <br />
-          for clients since 2016
+          Delivering succesful websites <span>for clients since 2016</span>
         </SectionSubheading>
         <PortfolioGridStyles>
           {allMarkdownRemark.edges

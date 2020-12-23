@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
+import { device } from '../styles/devices'
 
 import Container from './Container'
 
@@ -12,18 +13,18 @@ const HeaderWrapper = styled.div`
 const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   height: 55px;
 
-  @media (min-width: 1024px) {
-    justify-content: flex-start;
+  @media ${device.lg} {
+    justify-content: space-between;
   }
 `
 
 const Navbar = styled.nav`
   ul {
     display: flex;
-    gap: 6.4rem;
+
     list-style: none;
     margin: 0;
     padding: 0;
@@ -43,9 +44,9 @@ const Navbar = styled.nav`
   }
 `
 const HeaderLogo = styled.div`
+  margin-right: 2rem;
   font-size: 2rem;
   font-weight: 700;
-  margin-right: 7.2rem;
 
   .initial {
     display: inline-block;

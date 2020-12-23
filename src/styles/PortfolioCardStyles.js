@@ -1,10 +1,17 @@
 import styled from 'styled-components'
 
+import { device } from './devices'
+
 const PortfolioCardStyles = styled.article`
-  @media (min-width: 1024px) {
-    display: grid;
+  display: grid;
+  gap: 48px;
+  max-width: 516px;
+
+  @media ${device.lg} {
     grid-template-columns: 1fr 420px;
     gap: 70px;
+    max-width: 100%;
+
     &:nth-of-type(odd) {
       grid-template-columns: 420px 1fr;
       .media {
@@ -13,6 +20,7 @@ const PortfolioCardStyles = styled.article`
       }
     }
   }
+
   .media {
     position: relative;
     display: grid;
