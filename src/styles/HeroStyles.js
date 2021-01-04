@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { device } from './devices'
 
 export const HeroBodyStyles = styled.div``
@@ -83,10 +83,27 @@ export const HeroTextStyles = styled.div`
 `
 
 export const HeroImageStyles = styled.div`
+  position: relative;
   max-width: 66.66%;
   margin: 0 auto;
-  @media (min-width: 1440px) {
+  padding: 10px;
+
+  @media ${device.md} {
+    max-width: 100%;
+  }
+  @media ${device.xxl} {
     max-width: calc(100% + 180px);
     width: 150%;
+  }
+  .outline {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .image {
+    display: block;
   }
 `
