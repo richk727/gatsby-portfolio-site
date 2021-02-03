@@ -96,7 +96,7 @@ const Portfolio = () => {
           {allMarkdownRemark.edges
             .slice(0, initialItems)
             .map(({ node }, index) => (
-              <PortfolioCardStyles key={node.id}>
+              <PortfolioCardStyles isOdd={Boolean(index % 2)} key={node.id}>
                 <div className="media">
                   <div className="image-container">
                     <ImageBGStyles

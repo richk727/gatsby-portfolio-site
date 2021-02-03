@@ -102,8 +102,22 @@ export const HeroImageStyles = styled.div`
     bottom: 10px;
     left: 10px;
   }
-
+  .red {
+    height: 2rem;
+    width: 2rem;
+  }
   .image {
     display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    clip-path: url(#hexagonal-mask);
+    background: var(--primary-accent);
   }
 `
